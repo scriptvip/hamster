@@ -224,3 +224,6 @@ if __name__ == "__main__":
         except KeyboardInterrupt:
             print(mrh + f"\rSuccessfully logged out of the bot\n")
             sys.exit()
+        except:
+            print("ERROR SLEEP 10 sec")
+            time.sleep(10)
