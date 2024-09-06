@@ -4,5 +4,9 @@ promo.txt
 user_agent.json
 __pycache__
 upgraders.py
+<<<<<<< HEAD
 debug.py
 codes/*
+=======
+debug.py
+>>>>>>> origin/main
