@@ -27,10 +27,7 @@ def save_setup(setup_name, setup_data):
         json.dump(setup_data, file, indent=4)
     awak()
     print(hju + f" Setup saved on {kng}setup{pth}/{setup_name}.json")
-    with open(f'./setup/{setup_name}.json', 'r') as file:
-        setup_content = json.load(file)
-        print(f"\n{json.dumps(setup_content, indent=4)}\n")
-    print(hju + f" Quick start : {pth}python main.py {htm}--setup {pth}{setup_name}")
+    
     input(f" Press Enter to continue...")
 
 def load_setup_from_file(setup_file):
@@ -52,7 +49,6 @@ def show_menu(auto_upgrade, taps_on, combo_upgrade, daily_cipher_on, claim_key_o
 {kng}  7.{reset} Auto Redeem Promo          : {get_status(promo_on)}
 {mrh}    {pth} --------------------------------{reset}
 {kng}  8.{reset} {kng}Save Setup{reset}
-{kng}  9.{reset} {mrh}Reset Setup{reset}
 {kng}  0.{reset} {hju}Start Bot {kng}(default){reset}
     """
     print(menu)
@@ -171,9 +167,20 @@ def main():
     promo_on = setup_data.get('promo_on', False)
     _method = setup_data.get('_method', None)
 
+    
 
     while True:
         try:
+            setup_data = {
+                'auto_upgrade': auto_upgrade,
+                '_method': _method,
+                'taps_on': taps_on,
+                'combo_upgrade': combo_upgrade,
+                'daily_cipher_on': daily_cipher_on,
+                'claim_key_on': claim_key_on,
+                'tasks_on': tasks_on,
+                'promo_on': promo_on,
+            }
             choice = show_menu(auto_upgrade, taps_on, combo_upgrade, daily_cipher_on, claim_key_on, tasks_on, promo_on)
             if choice == '1':
                 auto_upgrade = not auto_upgrade
@@ -194,18 +201,7 @@ def main():
             elif choice == '7':
                 promo_on = not promo_on
             elif choice == '8':
-                setup_name = input(" Enter setup name (without space): ")
-                setup_data = {
-                    'auto_upgrade': auto_upgrade,
-                    '_method': _method,
-                    'taps_on': taps_on,
-                    'combo_upgrade': combo_upgrade,
-                    'daily_cipher_on': daily_cipher_on,
-                    'claim_key_on': claim_key_on,
-                    'tasks_on': tasks_on,
-                    'promo_on': promo_on,
-                }
-                save_setup(setup_name, setup_data)
+                save_setup('example_setup', setup_data)
             elif choice == '0':
                 run_bot(auto_upgrade, taps_on, combo_upgrade, daily_cipher_on, claim_key_on, tasks_on, promo_on, _method)
             elif choice == '9':

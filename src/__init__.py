@@ -17,16 +17,18 @@ last_log_message = None
 
 def _banner():
     banner = r"""
- ██╗████████╗███████╗     ██╗ █████╗ ██╗    ██╗
- ██║╚══██╔══╝██╔════╝     ██║██╔══██╗██║    ██║
- ██║   ██║   ███████╗     ██║███████║██║ █╗ ██║
- ██║   ██║   ╚════██║██   ██║██╔══██║██║███╗██║
- ██║   ██║   ███████║╚█████╔╝██║  ██║╚███╔███╔╝
- ╚═╝   ╚═╝   ╚══════╝ ╚════╝ ╚═╝  ╚═╝ ╚══╝╚══╝  """ 
+  ██████╗ ██╗     ██╗████████╗ ██████╗██╗  ██╗
+ ██╔════╝ ██║     ██║╚══██╔══╝██╔════╝██║  ██║
+ ██║  ███╗██║     ██║   ██║   ██║     ███████║
+ ██║   ██║██║     ██║   ██║   ██║     ██╔══██║
+ ╚██████╔╝███████╗██║   ██║   ╚██████╗██║  ██║
+  ╚═════╝ ╚══════╝╚═╝   ╚═╝    ╚═════╝╚═╝  ╚═╝
+""" 
     print(Fore.GREEN + Style.BRIGHT + banner + Style.RESET_ALL)
     print(hju + f" Hamster Kombat Auto Bot")
-    print(mrh + f" NOT FOR SALE = Free to use")
-    print(mrh + f" before start please '{hju}git pull{mrh}' to update bot")
+    print(kng + f" This code copied and devoloped by abdo_sleem")
+    print(hju + f" Elgyar la y5t4e !!")
+    print(hju + f" Enzl ya mtdl333 (^__*)")
 
 def _clear():
     os.system('cls' if os.name == 'nt' else 'clear')

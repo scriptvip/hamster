@@ -61,14 +61,18 @@ def get_proxy(proxies):
 
 def _banner():
     banner = r"""
- ██╗████████╗███████╗     ██╗ █████╗ ██╗    ██╗
- ██║╚══██╔══╝██╔════╝     ██║██╔══██╗██║    ██║
- ██║   ██║   ███████╗     ██║███████║██║ █╗ ██║
- ██║   ██║   ╚════██║██   ██║██╔══██║██║███╗██║
- ██║   ██║   ███████║╚█████╔╝██║  ██║╚███╔███╔╝
- ╚═╝   ╚═╝   ╚══════╝ ╚════╝ ╚═╝  ╚═╝ ╚══╝╚══╝  """ 
+  ██████╗ ██╗     ██╗████████╗ ██████╗██╗  ██╗
+ ██╔════╝ ██║     ██║╚══██╔══╝██╔════╝██║  ██║
+ ██║  ███╗██║     ██║   ██║   ██║     ███████║
+ ██║   ██║██║     ██║   ██║   ██║     ██╔══██║
+ ╚██████╔╝███████╗██║   ██║   ╚██████╗██║  ██║
+  ╚═════╝ ╚══════╝╚═╝   ╚═╝    ╚═════╝╚═╝  ╚═╝
+""" 
     print(Fore.GREEN + Style.BRIGHT + banner + Style.RESET_ALL)
     print(hju + f" Hamster Promo Code Generator")
+    print(kng + f" This code copied and devoloped by abdo_sleem")
+    print(hju + f" Elgyar la y5t4e !!")
+    print(hju + f" Enzl ya mtdl333 (^__*)")
 
 def _clear():
     os.system('cls' if os.name == 'nt' else 'clear')
