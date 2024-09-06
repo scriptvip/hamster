@@ -1,0 +1,22 @@
+{
+    "FAKE_IP/S_INFO": true,
+    
+    "MINIMUM_TAP": 438,
+    "MAXIMUM_TAP": 1200,
+
+    "TAP_DELAY": true,
+    "MIN_TAP_DELAY": 5,
+    "MAX_TAP_DELAY": 7,
+
+    "CLAIM_KEY_DELAY": true,
+    "MIN_CLAIM_KEY_DELAY": 7,
+    "MAX_CLAIM_KEY_DELAY": 11,
+
+    "DELAY_UPGRADE": true,
+    "MIN_DELAY_UPGRADE": 4,
+    "MAX_DELAY_UPGRADE": 6,
+
+    "DELAY_EACH_ACCOUNT": 5,
+    "MAXIMUM_PRICE": 10000000,
+    "LOOP_COUNTDOWN": 3600
+}

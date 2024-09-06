@@ -1,0 +1,122 @@
+[
+
+    {"city_name": "Tijuana", "country_code": "MX", "asn_org": "Totalplay"},
+    {"city_name": "Mexico City", "country_code": "MX", "asn_org": "Telmex"},
+    {"city_name": "Guadalajara", "country_code": "MX", "asn_org": "Megacable"},
+    {"city_name": "Monterrey", "country_code": "MX", "asn_org": "Izzi"},
+    {"city_name": "Puebla", "country_code": "MX", "asn_org": "Telcel"},
+    
+    {"city_name": "Los Angeles", "country_code": "US", "asn_org": "AT&T"},
+    {"city_name": "New York", "country_code": "US", "asn_org": "Verizon"},
+    {"city_name": "Chicago", "country_code": "US", "asn_org": "Comcast"},
+    {"city_name": "Houston", "country_code": "US", "asn_org": "Cox Communications"},
+    {"city_name": "Phoenix", "country_code": "US", "asn_org": "CenturyLink"},
+
+    {"city_name": "Toronto", "country_code": "CA", "asn_org": "Rogers Communications"},
+    {"city_name": "Vancouver", "country_code": "CA", "asn_org": "Telus"},
+    {"city_name": "Montreal", "country_code": "CA", "asn_org": "Bell Canada"},
+    {"city_name": "Calgary", "country_code": "CA", "asn_org": "Shaw Communications"},
+    {"city_name": "Edmonton", "country_code": "CA", "asn_org": "Videotron"},
+
+    {"city_name": "Sydney", "country_code": "AU", "asn_org": "Telstra"},
+    {"city_name": "Melbourne", "country_code": "AU", "asn_org": "Optus"},
+    {"city_name": "Brisbane", "country_code": "AU", "asn_org": "TPG Telecom"},
+    {"city_name": "Perth", "country_code": "AU", "asn_org": "iiNet"},
+    {"city_name": "Adelaide", "country_code": "AU", "asn_org": "Vocus Communications"},
+
+    {"city_name": "Tokyo", "country_code": "JP", "asn_org": "NTT Communications"},
+    {"city_name": "Osaka", "country_code": "JP", "asn_org": "KDDI"},
+    {"city_name": "Nagoya", "country_code": "JP", "asn_org": "SoftBank"},
+    {"city_name": "Sapporo", "country_code": "JP", "asn_org": "Rakuten Mobile"},
+    {"city_name": "Fukuoka", "country_code": "JP", "asn_org": "NTT Docomo"},
+
+    {"city_name": "Berlin", "country_code": "DE", "asn_org": "Deutsche Telekom"},
+    {"city_name": "Munich", "country_code": "DE", "asn_org": "Vodafone Germany"},
+    {"city_name": "Frankfurt", "country_code": "DE", "asn_org": "1&1"},
+    {"city_name": "Hamburg", "country_code": "DE", "asn_org": "O2 Germany"},
+    {"city_name": "Stuttgart", "country_code": "DE", "asn_org": "Unitymedia"},
+
+    {"city_name": "Paris", "country_code": "FR", "asn_org": "Orange"},
+    {"city_name": "Marseille", "country_code": "FR", "asn_org": "SFR"},
+    {"city_name": "Lyon", "country_code": "FR", "asn_org": "Bouygues Telecom"},
+    {"city_name": "Toulouse", "country_code": "FR", "asn_org": "Free Mobile"},
+    {"city_name": "Nice", "country_code": "FR", "asn_org": "Numericable"},
+
+    {"city_name": "London", "country_code": "GB", "asn_org": "BT Group"},
+    {"city_name": "Manchester", "country_code": "GB", "asn_org": "Virgin Media"},
+    {"city_name": "Birmingham", "country_code": "GB", "asn_org": "Sky Broadband"},
+    {"city_name": "Glasgow", "country_code": "GB", "asn_org": "TalkTalk"},
+    {"city_name": "Liverpool", "country_code": "GB", "asn_org": "Plusnet"},
+
+    {"city_name": "Mumbai", "country_code": "IN", "asn_org": "Reliance Jio"},
+    {"city_name": "Delhi", "country_code": "IN", "asn_org": "Bharti Airtel"},
+    {"city_name": "Bangalore", "country_code": "IN", "asn_org": "Vodafone Idea"},
+    {"city_name": "Hyderabad", "country_code": "IN", "asn_org": "BSNL"},
+    {"city_name": "Chennai", "country_code": "IN", "asn_org": "Tata Communications"},
+
+    {"city_name": "São Paulo", "country_code": "BR", "asn_org": "Vivo"},
+    {"city_name": "Rio de Janeiro", "country_code": "BR", "asn_org": "Oi"},
+    {"city_name": "Brasília", "country_code": "BR", "asn_org": "Claro"},
+    {"city_name": "Salvador", "country_code": "BR", "asn_org": "TIM Brasil"},
+    {"city_name": "Fortaleza", "country_code": "BR", "asn_org": "Algar Telecom"},
+
+    {"city_name": "Beijing", "country_code": "CN", "asn_org": "China Telecom"},
+    {"city_name": "Shanghai", "country_code": "CN", "asn_org": "China Unicom"},
+    {"city_name": "Guangzhou", "country_code": "CN", "asn_org": "China Mobile"},
+    {"city_name": "Shenzhen", "country_code": "CN", "asn_org": "Tencent"},
+    {"city_name": "Chengdu", "country_code": "CN", "asn_org": "Sichuan Telecom"},
+
+    {"city_name": "Cape Town", "country_code": "ZA", "asn_org": "Vodacom"},
+    {"city_name": "Johannesburg", "country_code": "ZA", "asn_org": "MTN"},
+    {"city_name": "Durban", "country_code": "ZA", "asn_org": "Cell C"},
+    {"city_name": "Pretoria", "country_code": "ZA", "asn_org": "Telkom SA"},
+    {"city_name": "Port Elizabeth", "country_code": "ZA", "asn_org": "Rain"},
+
+    {"city_name": "Moscow", "country_code": "RU", "asn_org": "Rostelecom"},
+    {"city_name": "Saint Petersburg", "country_code": "RU", "asn_org": "MTS"},
+    {"city_name": "Novosibirsk", "country_code": "RU", "asn_org": "MegaFon"},
+    {"city_name": "Yekaterinburg", "country_code": "RU", "asn_org": "Beeline"},
+    {"city_name": "Kazan", "country_code": "RU", "asn_org": "T2 Mobile"},
+
+    {"city_name": "Seoul", "country_code": "KR", "asn_org": "SK Broadband"},
+    {"city_name": "Busan", "country_code": "KR", "asn_org": "KT Corporation"},
+    {"city_name": "Incheon", "country_code": "KR", "asn_org": "LG U+"},
+    {"city_name": "Daegu", "country_code": "KR", "asn_org": "SK Telecom"},
+    {"city_name": "Daejeon", "country_code": "KR", "asn_org": "Korea Telecom"},
+
+    {"city_name": "Dubai", "country_code": "AE", "asn_org": "Etisalat"},
+    {"city_name": "Abu Dhabi", "country_code": "AE", "asn_org": "du"},
+    {"city_name": "Sharjah", "country_code": "AE", "asn_org": "Virgin Mobile UAE"},
+    {"city_name": "Ajman", "country_code": "AE", "asn_org": "Etisalat"},
+    {"city_name": "Fujairah", "country_code": "AE", "asn_org": "du"},
+
+    {"city_name": "Buenos Aires", "country_code": "AR", "asn_org": "Telecom Argentina"},
+    {"city_name": "Córdoba", "country_code": "AR", "asn_org": "Movistar Argentina"},
+    {"city_name": "Rosario", "country_code": "AR", "asn_org": "Claro Argentina"},
+    {"city_name": "Mendoza", "country_code": "AR", "asn_org": "Personal Argentina"},
+    {"city_name": "La Plata", "country_code": "AR", "asn_org": "Telecentro"},
+
+    {"city_name": "Jakarta", "country_code": "ID", "asn_org": "Indosat"},
+    {"city_name": "Surabaya", "country_code": "ID", "asn_org": "Telkomsel"},
+    {"city_name": "Bandung", "country_code": "ID", "asn_org": "XL Axiata"},
+    {"city_name": "Medan", "country_code": "ID", "asn_org": "Smartfren"},
+    {"city_name": "Semarang", "country_code": "ID", "asn_org": "Three Indonesia"},
+
+    {"city_name": "Bangkok", "country_code": "TH", "asn_org": "True Corporation"},
+    {"city_name": "Chiang Mai", "country_code": "TH", "asn_org": "AIS"},
+    {"city_name": "Pattaya", "country_code": "TH", "asn_org": "Dtac"},
+    {"city_name": "Phuket", "country_code": "TH", "asn_org": "TOT Public Company"},
+    {"city_name": "Hat Yai", "country_code": "TH", "asn_org": "CAT Telecom"},
+
+    {"city_name": "Cairo", "country_code": "EG", "asn_org": "Telecom Egypt"},
+    {"city_name": "Alexandria", "country_code": "EG", "asn_org": "Vodafone Egypt"},
+    {"city_name": "Giza", "country_code": "EG", "asn_org": "Etisalat Misr"},
+    {"city_name": "Shubra El Kheima", "country_code": "EG", "asn_org": "Orange Egypt"},
+    {"city_name": "Port Said", "country_code": "EG", "asn_org": "We Telecom Egypt"},
+
+    {"city_name": "Lagos", "country_code": "NG", "asn_org": "MTN Nigeria"},
+    {"city_name": "Abuja", "country_code": "NG", "asn_org": "Globacom"},
+    {"city_name": "Ibadan", "country_code": "NG", "asn_org": "Airtel Nigeria"},
+    {"city_name": "Kano", "country_code": "NG", "asn_org": "9mobile"},
+    {"city_name": "Port Harcourt", "country_code": "NG", "asn_org": "MTN Nigeria"}
+]

@@ -1,0 +1,8 @@
+tokens.txt
+tokens2.txt
+promo.txt
+user_agent.json
+__pycache__
+upgraders.py
+debug.py
+codes/*
