@@ -2,7 +2,7 @@
     "key_count": 11,
     "countdown_delay": 11,
     "use_proxies": false,
-    "random_selection": false,
+    "random_selection": true,
     "selected_games": ["8"],
     "games": {
         "1": {
@@ -34,14 +34,11 @@
             "name": "Twerk Race 3D",
             "appToken": "61308365-9d16-4040-8bb0-2f4a4c69074c",
             "promoId": "61308365-9d16-4040-8bb0-2f4a4c69074c"
-<<<<<<< HEAD
         },
         "7": {
             "name": "Fluff Crusade",
             "appToken": "112887b0-a8af-4eb2-ac63-d82df78283d9",
             "promoId": "112887b0-a8af-4eb2-ac63-d82df78283d9"
-=======
->>>>>>> origin/main
         }
     }
 }
