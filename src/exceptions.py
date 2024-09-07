@@ -317,7 +317,11 @@ def buy_upgrade(token: str, upgrade_id: str, upgrade_name: str, level: int, prof
             global needed_card_id
             global needed_target_level
             r = str(error_res['error_message']).split()
-            needed_card_id, needed_target_level = r[4], r[6]
+            try:
+                needed_card_id, needed_target_level = r[4], r[6]
+            except:
+                needed_card_id, needed_target_level = r[3], r[4]
+
             log(bru + f"Not Meet{mrh} required to buy card {needed_card_id}", flush=True)
             return 'not_available'
         
