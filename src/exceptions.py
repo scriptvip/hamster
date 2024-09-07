@@ -308,19 +308,19 @@ def buy_upgrade(token: str, upgrade_id: str, upgrade_name: str, level: int, prof
             log(bru + f"Card {kng}is already on max level  ", flush=True)
             return 'max_level'
         elif error_res.get('error_code') == 'UPGRADE_NOT_AVAILABLE':
-            print(error_res, 'print(error_res')
+            # print(error_res, 'print(error_res')
             
             if 'moreReferralsCount' in error_res['error_message']:
                 log(bru + f"Not Meet{mrh} You Need {error_res['error_message'].split()[4]} Referral to buy card", flush=True)
                 return 'moreReferralsCount'
             
+            if 'referralCount' in error_res['error_message']:
+                log(bru + f"Not Meet{mrh} You Need {error_res['error_message'].split()[4]} Referral to buy card", flush=True)
+                return 'moreReferralsCount'
             global needed_card_id
             global needed_target_level
             r = str(error_res['error_message']).split()
-            try:
-                needed_card_id, needed_target_level = r[4], r[6]
-            except:
-                needed_card_id, needed_target_level = r[3], r[4]
+            needed_card_id, needed_target_level = r[4], r[6]
 
             log(bru + f"Not Meet{mrh} required to buy card {needed_card_id}", flush=True)
             return 'not_available'
