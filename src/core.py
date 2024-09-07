@@ -67,8 +67,6 @@ def show_upgrade_menu():
 {kng} Upgrade Method:{reset}
 {kng} 1. {pth}highest profit{reset}
 {kng} 2. {pth}lowest price{reset}
-{kng} 3. {pth}price less than balance{reset}
-{kng} 4. {pth}upgrade by payback {hju}[ enchanced ]{reset}
 {kng} 5. {pth}back to {bru}main menu{reset}
 
 {kng} [INFO]{reset} Current Max Price : {pth}{_number(MAXIMUM_PRICE)}{reset}
@@ -126,7 +124,7 @@ def run_bot(auto_upgrade, taps_on, combo_upgrade, daily_cipher_on, claim_key_on,
                                 log(hju + f"CEO of {pth}{exchange_name} {hju}exchange")
                                 claim_daily(token)
                                 
-                            if taps_on or True:
+                            if taps_on:
                                 while True:
                                     exhausted(token)
                                     if not boost(token):

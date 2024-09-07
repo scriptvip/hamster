@@ -161,87 +161,80 @@ def boost(token):
         time.sleep(1)
         return False
 
-def upgrade_passive(token, _method):
+def get_target_card(token, _method):
+    
     MAXIMUM_PRICE = config.get('MAXIMUM_PRICE', 10000000)
-
     clicker_data = _sync(token)
     if 'clickerUser' in clicker_data:
         user_info = clicker_data['clickerUser']
         balance_coins = user_info['balanceCoins']
     else:
         log(mrh + f"Failed to get user data\r", flush=True)
-        return
-
+        return None
+    
     upgrades = available_upgrades(token)
     if not upgrades:
         log(mrh + f"\rFailed to get data or no upgrades available\r", flush=True)
-        return
+        return None
 
     log(bru + f"Total card available: {pth}{len(upgrades)}", flush=True)
-
+    
     if _method == '1':
-        upg_sort = sorted(
-            [u for u in upgrades if u['price'] <= MAXIMUM_PRICE and u['price'] > 0],
-            key=lambda x: -x['profitPerHour'] / x['price'] if x['price'] > 0 else 0,
-            reverse=False
+        return max(
+            [u for u in upgrades if u['price'] <= MAXIMUM_PRICE and u['price'] > 0 and u['isAvailable'] and not u['isExpired'] and u.get('cooldownSeconds', 0) == 0],
+            key=lambda x: x['profitPerHour'] / x['price'] if x['price'] > 0 else 0
         )
     elif _method == '2':
-        upg_sort = sorted(
-            [u for u in upgrades if u['price'] <= MAXIMUM_PRICE and u['profitPerHour'] > 0 and u.get("price", 0) > 0],
-            key=lambda x: x['price'] / x["profitPerHour"] if x['profitPerHour'] > 0 else float('inf'),
-            reverse=False
+        return min(
+            [u for u in upgrades if u['price'] <= MAXIMUM_PRICE and u['price'] > 0 and u['isAvailable'] and not u['isExpired'] and u.get('cooldownSeconds', 0) == 0],
+            key=lambda x: x['price']
         )
-    elif _method == '4':
-        upg_sort = sorted(
-            [u for u in upgrades if u['price'] <= MAXIMUM_PRICE and u['price'] > 0 and u.get("profitPerHour", 0) > 0],
-            key=lambda x: x["profitPerHour"] / x["price"] if x['profitPerHour'] > 0 else float('inf'),
-            reverse=True
-        )
-    elif _method == '3':
-        upg_sort = [u for u in upgrades if u['price'] <= balance_coins and u['price'] <= MAXIMUM_PRICE]
-        if not upg_sort:
-            log(mrh + f"No upgrade available less than balance\r", flush=True)
-            return
+    
     else:
         log(mrh + "Invalid option, please try again", flush=True)
-        return
+        return None
 
-    if not upg_sort:
-        log(bru + f"No {pth}item {bru}available under {pth}{_number(MAXIMUM_PRICE)}\r", flush=True)
-        return
+def upgrade_passive(token, _method):
+    MAXIMUM_PRICE = config.get('MAXIMUM_PRICE', 10000000)
+
 
     any_upgrade_attempted = False
     upgrades_purchased = False
+
     while True:
-        for upgrade in upg_sort:
-            if upgrade['isAvailable'] and not upgrade['isExpired']:
-                status = buy_upgrade(
-                    token, 
-                    upgrade['id'], 
-                    upgrade['name'], 
-                    upgrade['level'], 
-                    upgrade['profitPerHour'], 
-                    upgrade['price']
-                )
-                
-                if status == 'insufficient_funds':
-                    clicker_data = _sync(token)
-                    if 'clickerUser' in clicker_data:
-                        user_info = clicker_data['clickerUser']
-                        balance_coins = user_info['balanceCoins']
-                        log(mrh + f"Balance after : {pth}{_number(balance_coins)}")
-                    return
-                elif status == 'success':
-                    upgrades_purchased = True
-                    continue
-                else:
-                    continue
-        
-        if not any_upgrade_attempted:
+        target_card = get_target_card(token, _method)
+
+        if not target_card:
             log(bru + f"No {pth}item {bru}available under {pth}{_number(MAXIMUM_PRICE)}\r", flush=True)
-            break
-        elif not upgrades_purchased:
-            any_upgrade_attempted = True
+            return
+        
+        status = buy_upgrade(
+            token, 
+            target_card['id'], 
+            target_card['name'], 
+            target_card['level'], 
+            target_card['profitPerHour'], 
+            target_card['price']
+        )
+        
+        if status == 'insufficient_funds':
+            clicker_data = _sync(token)
+            if 'clickerUser' in clicker_data:
+                user_info = clicker_data['clickerUser']
+                balance_coins = user_info['balanceCoins']
+                log(mrh + f"Balance after : {pth}{_number(balance_coins)}")
+            return
+        elif status == 'success':
+            upgrades_purchased = True
+            continue
+        else:
+            continue
+        
+        # if not any_upgrade_attempted:
+        #     log(bru + f"No {pth}item {bru}available under {pth}{_number(MAXIMUM_PRICE)}\r", flush=True)
+        #     break
+        # elif not upgrades_purchased:
+        #     any_upgrade_attempted = True
 
 def claim_daily_combo(token: str) -> dict:
     url = 'https://api.hamsterkombatgame.io/clicker/claim-daily-combo'
