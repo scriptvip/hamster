@@ -162,7 +162,7 @@ def boost(token):
         return False
 
 def get_target_card(token, _method):
-    
+    MINIMUM_PROFIT = config.get('MINIMUM_PROFIT', 1/20)
     MAXIMUM_PRICE = config.get('MAXIMUM_PRICE', 10000000)
     clicker_data = _sync(token)
     if 'clickerUser' in clicker_data:
@@ -180,10 +180,13 @@ def get_target_card(token, _method):
     log(bru + f"Total card available: {pth}{len(upgrades)}", flush=True)
     
     if _method == '1':
-        return max(
-            [u for u in upgrades if u['price'] <= MAXIMUM_PRICE and u['price'] > 0 and u['isAvailable'] and not u['isExpired'] and u.get('cooldownSeconds', 0) == 0],
-            key=lambda x: x['profitPerHour'] / x['price'] if x['price'] > 0 else 0
-        )
+        try:
+            return max(
+                [u for u in upgrades if u['price'] <= MAXIMUM_PRICE and u['price'] > 0 and u['isAvailable'] and not u['isExpired'] and u.get('cooldownSeconds', 0) == 0 and (u['profitPerHour'] / u['price']) >= MINIMUM_PROFIT],
+                key=lambda x: x['profitPerHour'] / x['price'] if x['price'] > 0 else 0
+            )
+        except:
+            return None
     elif _method == '2':
         return min(
             [u for u in upgrades if u['price'] <= MAXIMUM_PRICE and u['price'] > 0 and u['isAvailable'] and not u['isExpired'] and u.get('cooldownSeconds', 0) == 0],
