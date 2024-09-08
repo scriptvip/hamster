@@ -1,4 +1,4 @@
-import sys
+import sys, os
 
 from src.core import main
 from src.__init__ import _banner, log, mrh
@@ -6,6 +6,7 @@ from src.__init__ import _banner, log, mrh
 if __name__ == "__main__":
     while True:
         try:
+            if not os.path.exists('codes'):os.mkdir('codes')
             _banner()
             main()
         except KeyboardInterrupt:
